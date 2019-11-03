@@ -17,11 +17,15 @@ void exchange_parameter2(int& a, int& b)
 	a = a - b;
 }
 
+void exchange_parameter3(int& a, int& b)
+{
+	cout << b << "    " << a << endl;
+}
+
 int main()
 {
 	int a, b;
 	cin >> a >> b;
-	exchange_parameter2(a, b);
-	cout << a << endl << b << endl;
+	exchange_parameter3(a, b);
 	return 0;
 }
