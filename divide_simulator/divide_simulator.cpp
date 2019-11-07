@@ -7,7 +7,7 @@ using namespace std;
 
 vector<int> store;
 
-int divide_simulator(int divisor, int dividend,int accuracy)
+void divide_simulator(int divisor, int dividend,int accuracy)
 {
 	int integer = dividend / divisor;
 	int remain = dividend - divisor * integer;
@@ -18,14 +18,6 @@ int divide_simulator(int divisor, int dividend,int accuracy)
 		store.push_back(remain/divisor);
 		remain =remain%divisor;
 	}
-	return integer;
-}
-
-int  main()
-{
-	int divisor, dividend,accuracy;
-	cin >> divisor >> dividend>>accuracy;
-	int integer = divide_simulator(divisor, dividend, accuracy);
 	cout << integer;
 	if (accuracy > 0)
 	{
@@ -35,6 +27,15 @@ int  main()
 			cout << store[i];
 		}
 		cout << endl;
+	}
+}
+
+int  main()
+{
+	int divisor, dividend,accuracy;
+	while (cin >> divisor >> dividend >> accuracy && (divisor || dividend || accuracy) != 0)
+	{
+		divide_simulator(divisor, dividend, accuracy);
 	}
 	return 0;
 }
